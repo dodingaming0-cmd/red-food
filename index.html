@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d71920">
+  <title>RED FOOD | Rasa Berani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#home">RED FOOD<span>.</span></a>
+    <nav>
+      <a href="#home" data-i18n="navHome">Beranda</a>
+      <a href="#menu" data-i18n="navMenu">Menu</a>
+      <a href="#location" data-i18n="navLocation">Lokasi</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="language-switch" id="languageSwitch" aria-label="Switch language">🇮🇩 ID</button>
+      <button class="cart-nav" id="cartNav" aria-label="Go to cart">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">BERANI PEDAS. BERANI BEDA.</p>
+        <h1 data-i18n="heroTitle">Saatnya menikmati rasa <span>yang lebih berani.</span></h1>
+        <p class="hero-desc" data-i18n="heroDesc">Pilihan makanan spesial dengan level yang bisa kamu tentukan sendiri.</p>
+        <a class="primary-btn" href="#menu" data-i18n="heroButton">Jelajahi Menu <span>↗</span></a>
+        <div class="hero-note"><span class="red-dot"></span><span data-i18n="heroNote">Dibuat untuk pecinta rasa</span></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1100&q=85" alt="Crispy fried chicken">
+        </div>
+        <div class="floating-label"><strong>RED</strong><span>FOOD EXPERIENCE</span></div>
+        <div class="hero-stamp">FRESH<br> & BOLD</div>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow" data-i18n="menuEyebrow">PILIHAN SPESIAL</p><h2 data-i18n="menuTitle">Menu <span>favorit.</span></h2></div>
+        <p data-i18n="menuDesc">Pilih menu, tentukan level, lalu masukkan ke keranjang.</p>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="cart-section section" id="cart">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow" data-i18n="cartEyebrow">PESANANMU</p><h2 data-i18n="cartTitle">Keranjang <span>belanja.</span></h2></div>
+        <p data-i18n="cartDesc">Periksa pilihanmu sebelum checkout.</p>
+      </div>
+      <div class="cart-panel reveal">
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+          <div class="summary-line"><span data-i18n="subtotal">Subtotal</span><strong id="subtotal">Rp0</strong></div>
+          <div class="summary-line"><span data-i18n="extraInfo">Biaya tambahan level</span><strong id="extraTotal">Rp0</strong></div>
+          <div class="summary-line total-line"><span data-i18n="total">Total</span><strong id="total">Rp0</strong></div>
+          <button class="primary-btn checkout-btn" id="checkoutButton" data-i18n="checkout">Lanjut Checkout <span>→</span></button>
+          <p class="tiny-note" data-i18n="checkoutNote">Checkout ini hanya simulasi untuk tugas sekolah.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section section" id="location">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow" data-i18n="locationEyebrow">TEMUKAN KAMI</p><h2 data-i18n="locationTitle">Lokasi <span>RED FOOD.</span></h2></div>
+        <p data-i18n="locationDesc">Lokasi contoh untuk demonstrasi website.</p>
+      </div>
+      <div class="map-frame reveal">
+        <iframe title="Peta lokasi contoh RED FOOD" src="https://www.google.com/maps?q=Alun-Alun%20Tulungagung&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <p class="map-caption" data-i18n="mapCaption">📍 Lokasi demo: area Alun-Alun Tulungagung. Bukan alamat toko sungguhan.</p>
+    </section>
+  </main>
+
+  <footer><a class="logo" href="#home">RED FOOD<span>.</span></a><p data-i18n="footerText">Rasa berani, pilihanmu sendiri.</p><small>© 2026 RED FOOD. Demo project.</small></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="checkoutDialog" class="checkout-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="Close">×</button>
+    <p class="eyebrow" data-i18n="checkoutEyebrow">KONFIRMASI</p>
+    <h2 data-i18n="checkoutTitle">Pesananmu siap!</h2>
+    <div id="checkoutSummary"></div>
+    <p class="dialog-total"><span data-i18n="total">Total</span><strong id="dialogTotal">Rp0</strong></p>
+    <button class="primary-btn" id="confirmOrder" data-i18n="confirm">Konfirmasi Pesanan</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
